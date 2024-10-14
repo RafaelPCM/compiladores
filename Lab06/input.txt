@@ -1,0 +1,8 @@
+// Este é um comentário de linha única
+total + 3 * 40 // Comentário após uma expressão válida
+/* Este é um comentário de bloco */
+total + 3 * 40 /* Comentário de bloco após expressão válida */
+total + 3 // Comentário misturado
+3 * 40 /* Comentário encerrado aqui */ + 20
+total + 3 /* Bloco
+continua */ * 40
