@@ -1,3 +1,13 @@
+#include <iostream>
+#include <sstream>
+#include "lexer.h" // Certifique-se de que Token e Word estão definidos aqui
+
+using namespace std;
+
+Lexer::Lexer() {
+    // Inicializa a tabela de identificadores, se necessário
+}
+
 Token Lexer::Scan()
 {
     // Ignora espaços em branco e comentários
@@ -27,9 +37,8 @@ Token Lexer::Scan()
                     }
                     else if (peek == EOF)
                     {
-                        // Caso chegue ao final do arquivo sem fechar o comentário
                         cout << "Erro: Comentário de bloco não fechado" << endl;
-                        return Token{Tag::END};
+                        return Token{0}; // Use um valor apropriado aqui
                     }
                 }
             }
@@ -82,4 +91,11 @@ Token Lexer::Scan()
     Token tok{peek};
     peek = ' ';
     return tok;
+}
+
+void Lexer::Start() {
+    Token tok = Scan();
+    while (tok.tag != EOF) { // Assumimos que EOF é o indicador de fim do arquivo
+        tok = Scan();
+    }
 }

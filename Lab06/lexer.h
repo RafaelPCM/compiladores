@@ -10,35 +10,39 @@ enum Tag { NUM = 256, ID, TRUE, FALSE };
 // classes para representar tokens
 struct Token
 {
-	int tag;
-	Token(int t) : tag(t) {}
+    int tag;
+    Token(int t) : tag(t) {}
 };
 
 struct Num : public Token
 {
-	int value;
-	Num(int v) : Token(Tag::NUM), value(v) {}
+    int value;
+    Num(int v) : Token(Tag::NUM), value(v) {}
 };
 
 struct Id : public Token
 {
-	string name;
-	Id(): Token(0) {}
-	Id(int t, string s) : Token(t), name(s) {}
+    string name;
+    Id() : Token(0) {}
+    Id(int t, string s) : Token(t), name(s) {}
 };
 
+struct Word : public Token {
+    std::string lexeme;
+    Word(std::string s) : Token(Tag::ID), lexeme(s) {}
+};
 
 // analisador léxico
 class Lexer
 {
 private:
-	int  line = 1;
-	char peek = ' ';
-	unordered_map<string, Id> id_table;
+    int  line = 1;
+    char peek = ' ';
+    unordered_map<string, Id> id_table;
 
 public:
-	Lexer();
-	
-	Token Scan();
-	void Start();
+    Lexer();
+    
+    Token Scan();
+    void Start();
 };

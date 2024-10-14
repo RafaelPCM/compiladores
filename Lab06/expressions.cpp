@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-	Lexer scanner;
-	scanner.Start();
-	cout << endl;
+    Lexer scanner;
+    scanner.Start();
+    cout << endl;
 }
