@@ -53,7 +53,22 @@ string Expression::Type()
 // Constant
 // --------
 
-Constant::Constant(int etype, Token *t) : Expression(NodeType::CONSTANT, etype, t) {}
+Constant::Constant(int etype, Token *t) : Expression(NodeType::CONSTANT, etype, t) {
+    // Implementa a conversão automática de inteiro para booleano
+    if (etype == ExprType::INT) {
+        int value = std::stoi(token->lexeme);
+        if (value == 0) {
+            // Se for 0, converte para false (booleano)
+            type = ExprType::BOOL;
+            token->lexeme = "false";
+        } else {
+            // Qualquer outro valor converte para true (booleano)
+            type = ExprType::BOOL;
+            token->lexeme = "true";
+        }
+    }
+}
+
 
 // ----------
 // Identifier
