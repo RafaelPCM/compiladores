@@ -3,10 +3,9 @@
 #include <sstream>
 using std::stringstream;
 
-Lexer* scanner;
-std::ifstream fin;
-
-// extern std::ifstream fin;
+// Lexer* scanner;
+// std::ifstream fin;
+extern std::ifstream fin;
 
 // construtor 
 Lexer::Lexer()

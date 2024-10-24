@@ -1,17 +1,20 @@
+// error.h
 #ifndef COMPILER_ERROR
 #define COMPILER_ERROR
 
 #include <string>
 using std::string;
 
-class SyntaxError 
+class SyntaxError
 {
 private:
-	int lineno;
-	string desc;
+    int lineno;
+    string msg;
+
 public:
-	SyntaxError(int line, string msg);
-	void What();
+    SyntaxError(int, string);
+    string What();   // Deve retornar string
+    int LineNo();    // Método para acessar lineno
 };
 
 #endif

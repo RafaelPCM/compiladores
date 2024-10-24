@@ -8,6 +8,10 @@ using std::stringstream;
 using std::unordered_map;
 using std::string;
 
+// Declaração extern de scanner e fin
+extern class Lexer* scanner;
+extern std::ifstream fin;
+
 // cada token possui uma tag (número a partir de 256)
 // a tag de caracteres individuais é seu código ASCII
 enum Tag { ID = 256, INTEGER, REAL, TYPE, TRUE, FALSE, MAIN, IF, WHILE, DO, OR, AND, EQ, NEQ, LTE, GTE };

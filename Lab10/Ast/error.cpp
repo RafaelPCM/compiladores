@@ -1,14 +1,14 @@
+// error.cpp
 #include "error.h"
-#include <iostream>
-using std::cout;
-using std::endl;
 
-SyntaxError::SyntaxError(int line, string msg) : lineno(line), desc(msg)
+SyntaxError::SyntaxError(int line, string m) : lineno(line), msg(m) {}
+
+string SyntaxError::What()
 {
-	
+    return msg;   // Deve retornar msg
 }
 
-void SyntaxError::What()
+int SyntaxError::LineNo()
 {
-	cout << "Erro (linha " << lineno << "): " << desc << endl;
+    return lineno;
 }

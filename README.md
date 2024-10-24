@@ -14,6 +14,7 @@ https://github.com/JudsonSS/Compiladores/tree/2e1b81ba859e18e938ea149d1cef2edea0
 
 ### Comandos uteis para rodar o projeto:
 
+#### Para rodar o Lab06
 cd Lab06
 
 g++ -o lexer lexer.cpp expressions.cpp
@@ -21,11 +22,35 @@ g++ -o lexer lexer.cpp expressions.cpp
 Get-Content input.txt | ./lexer.exe
 
 
-Para rodar o Lab10:
+
+#### Para rodar o Lab10:
+cd Lab10
 
 
-g++ -o Lab10\Ast\Testes\teste1 Lab10\Ast\Testes\teste1.cpp Lab10\Ast\ast.cpp Lab10\Ast\lexer.cpp Lab10\Ast\parser.cpp Lab10\Ast\error.cpp Lab10\Ast\symtable.cpp -std=c++17
-./Lab10/Ast/Testes/teste1
+<!-- Para o teste 1 -->
 
-g++ -o Lab10\Ast\Testes\teste2 Lab10\Ast\Testes\teste2.cpp Lab10\Ast\ast.cpp Lab10\Ast\lexer.cpp Lab10\Ast\parser.cpp Lab10\Ast\error.cpp Lab10\Ast\symtable.cpp -std=c++17
-./Lab10/Ast/Testes/teste2
+g++ -o Lab10/Ast/Testes/teste1.exe `
+Lab10/Ast/main.cpp `
+Lab10/Ast/ast.cpp `
+Lab10/Ast/lexer.cpp `
+Lab10/Ast/parser.cpp `
+Lab10/Ast/error.cpp `
+Lab10/Ast/symtable.cpp `
+Lab10/Ast/checker.cpp `
+-std=c++17
+
+.\Lab10\Ast\Testes\teste1.exe Lab10/Ast/Testes/teste1.cpp
+
+
+<!-- Para o teste 2 -->
+g++ -o Lab10/Ast/Testes/teste2.exe `
+Lab10/Ast/main.cpp `
+Lab10/Ast/ast.cpp `
+Lab10/Ast/lexer.cpp `
+Lab10/Ast/parser.cpp `
+Lab10/Ast/error.cpp `
+Lab10/Ast/symtable.cpp `
+Lab10/Ast/checker.cpp `
+-std=c++17
+
+.\Lab10\Ast\Testes\teste2.exe Lab10/Ast/Testes/teste2.cpp
