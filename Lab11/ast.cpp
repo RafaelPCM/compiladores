@@ -349,17 +349,16 @@ DoWhile::DoWhile(Statement *s, Expression *e) :
 }
 
 void DoWhile::Gen() {
-    int label1 = NewLabel();  // Cria rótulo para o início do loop
-    int label2 = NewLabel();  // Cria rótulo para a saída do loop
+    int label1 = NewLabel();  // Rótulo do início do loop
+    int label2 = NewLabel();  // Rótulo da saída do loop
     
-    EmitLabel(label1);  // Emite o rótulo do início do loop
-    stmt->Gen();  // Gera o código para o corpo do loop
-    
-    Expression* cond = Rvalue(expr);  // Avalia a condição
-    cout << "\tifTrue " << cond->ToString() << " goto L" << label1 << endl;  // Se a condição for verdadeira, volta para o início do loop
-    
-    EmitLabel(label2);  // Emite o rótulo de saída do loop
+    EmitLabel(label1);  // Emite o rótulo de início
+    stmt->Gen();  // Gera o código do corpo do loop
+    Expression* cond = Rvalue(expr);  // Avalia a condição do loop
+    cout << "\tifTrue " << cond->ToString() << " goto L" << label1 << endl;  // Se a condição for verdadeira, volta ao início
+    EmitLabel(label2);  // Emite o rótulo de saída
 }
+
 
 
 

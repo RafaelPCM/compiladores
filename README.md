@@ -12,104 +12,6 @@ https://github.com/JudsonSS/Compiladores/tree/2e1b81ba859e18e938ea149d1cef2edea0
 
 ### [Como Instalar GCC/G++ MinGW no Windows:](https://terminalroot.com.br/2022/12/como-instalar-gcc-gpp-mingw-no-windows.html)
 
-### Comandos uteis para rodar o projeto:
-
-#### Para rodar o Lab06
-cd Lab06
-
-g++ -o lexer lexer.cpp expressions.cpp
-
-Get-Content input.txt | ./lexer.exe
-
-
-
-#### Para rodar o Lab10:
-cd Lab10
-
-
-<!-- Para o teste 1 -->
-
-g++ -o Lab10/Ast/Testes/teste1.exe `
-Lab10/Ast/main.cpp `
-Lab10/Ast/ast.cpp `
-Lab10/Ast/lexer.cpp `
-Lab10/Ast/parser.cpp `
-Lab10/Ast/error.cpp `
-Lab10/Ast/symtable.cpp `
-Lab10/Ast/checker.cpp `
--std=c++17
-
-.\Lab10\Ast\Testes\teste1.exe Lab10/Ast/Testes/teste1.cpp
-
-
-<!-- Para o teste 2 -->
-g++ -o Lab10/Ast/Testes/teste2.exe `
-Lab10/Ast/main.cpp `
-Lab10/Ast/ast.cpp `
-Lab10/Ast/lexer.cpp `
-Lab10/Ast/parser.cpp `
-Lab10/Ast/error.cpp `
-Lab10/Ast/symtable.cpp `
-Lab10/Ast/checker.cpp `
--std=c++17
-
-.\Lab10\Ast\Testes\teste2.exe Lab10/Ast/Testes/teste2.cpp
-
-
-
-
-#### Para rodar o Lab11: 
-
-Para rodar e testar o código com as modificações que fizemos, você precisará seguir alguns passos. Vou detalhar o processo abaixo:
-
-### Requisitos
-1. **Compilador C++**: Certifique-se de que você tem um compilador C++ instalado (como `g++`).
-2. **CMake**: O projeto parece usar CMake para configuração, então você precisará do CMake instalado para compilar o projeto.
-
-### Passos para compilar e rodar
-
-1. **Baixe o projeto**:
-   - Extraia o arquivo zip atualizado (`Lab11.zip`) em um diretório local.
-
-2. **Abra um terminal** (ou um prompt de comando se estiver no Windows).
-
-3. **Navegue até o diretório do projeto**:
-   ```bash
-   cd caminho/para/Lab11
-   ```
-
-4. **Crie um diretório build** (para não misturar os arquivos de compilação com os arquivos de origem):
-   ```bash
-   mkdir build
-   cd build
-   ```
-
-5. **Execute o CMake** para configurar o projeto:
-   ```bash
-   cmake ..
-   ```
-
-6. **Compile o projeto**:
-   ```bash
-   make
-   ```
-
-7. **Rode o projeto**:
-   Após a compilação, o executável estará disponível no diretório `build`. Para rodar o código usando o teste fornecido no arquivo `teste4.cpp`, execute:
-   ```bash
-   ./nome_do_executavel Testes/teste4.cpp
-   ```
-
-   Substitua `nome_do_executavel` pelo nome gerado após a compilação (pode ser algo como `tradutor`, dependendo de como foi configurado).
-
-### Verificar o código intermediário gerado
-Ao rodar o código com `teste4.cpp`, você verá o código intermediário gerado no terminal, que deve ser semelhante ao exemplo fornecido na questão.
-
-Se você tiver dúvidas adicionais sobre o processo, estarei à disposição!
-
-
-
-O erro que você está recebendo indica que o comando `cmake` não está disponível no seu sistema, o que significa que o CMake não está instalado ou não foi configurado corretamente no seu ambiente. Vamos resolver isso instalando o CMake e configurando o ambiente de compilação.
 
 ### Passos para instalar o CMake no Windows:
 
@@ -123,54 +25,113 @@ O erro que você está recebendo indica que o comando `cmake` não está dispon�
    ```bash
    cmake --version
    ```
+
    Isso deve exibir a versão do CMake instalada, confirmando que a instalação foi bem-sucedida.
 
-### Compilando o projeto:
+3. **Instalar e usar o nmake ou make**:
+   O erro que menciona que nmake ou make não foram encontrados indica que essas ferramentas não estão instaladas ou configuradas no seu PATH.
 
-Após instalar o CMake:
+   Instalar o NMake: O nmake é parte da instalação do Visual Studio. Certifique-se de que você tenha o Developer Command Prompt for Visual Studio disponível, que inclui o nmake automaticamente. Execute o comando nmake de dentro do Developer Command Prompt em vez do PowerShell.
 
-1. **Navegue até o diretório do projeto** no terminal:
+   Instalar o make: Se você quiser usar o make, pode instalar o MSYS2 ou o MinGW no Windows. Isso fornecerá as ferramentas de desenvolvimento UNIX, como o make.
+
+   Instale o MSYS2: MSYS2 Download (https://www.msys2.org/)
+   Após a instalação, abra o terminal MSYS2 e instale o make com o comando:
    ```bash
-   cd C:\Users\rafae\vscodeworkbench\compiladores\Lab11
+   pacman -S make
    ```
 
-2. **Crie o diretório `build` e configure o CMake**:
+4. Alternativa com Ninja:
+   Se preferir usar outra ferramenta de build, pode instalar o Ninja, que também funciona com o CMake.
+
+   Baixe o Ninja: Ninja Download (https://ninja-build.org/)
+   Após baixar e adicionar o Ninja ao seu PATH, você pode usar o comando:
+
    ```bash
-   mkdir build
-   cd build
-   cmake ..
+   cmake -G Ninja ..
+   ninja
    ```
 
-3. **Compile o projeto**:
-   ```bash
-   make
-   ```
+5. **Verificar o caminho do MinGW**:
+   Certifique-se de que o MinGW (incluindo gcc, g++ e make) está instalado corretamente.
+   O caminho para o MinGW deve estar incluído na variável de ambiente PATH do Windows.
+   Se o MinGW não estiver instalado, você pode instalá-lo seguindo os passos abaixo:
 
-4. **Execute o projeto**:
-   Após a compilação, execute o projeto com o teste fornecido:
-   ```bash
-   ./nome_do_executavel ..\Testes\teste4.cpp
-   ```
+   Instalar MinGW: Baixe o MinGW.
+   Após a instalação, adicione o diretório bin do MinGW (onde gcc, g++, e make estão localizados) ao PATH do Windows.
+   Para verificar se o MinGW está instalado e configurado corretamente, execute os seguintes comandos no terminal:
 
-Se o CMake estiver corretamente instalado e o caminho estiver configurado no sistema, esses passos permitirão que você compile e execute o projeto corretamente. Se houver mais algum problema, estou à disposição para ajudar!
+      ```bash
+      gcc --version
+      g++ --version
+      make --version
+      ```
 
 
 
+### Possiveis Erros:
 
+O erro indica que o CMake está tentando compilar um programa de teste simples, mas não conseguiu, provavelmente porque o caminho para o compilador MinGW ou para o make está incorreto ou não foi configurado corretamente. Além disso, o CMake tenta usar C:/mingw64/bin/gcc.exe, o que pode não estar no local certo.
 
-cmake -G "MinGW Makefiles" -DCMAKE_C_COMPILER=C:/mingw64/bin/gcc.exe -DCMAKE_CXX_COMPILER=C:/mingw64/bin/g++.exe -DCMAKE_MAKE_PROGRAM=C:/mingw64/bin/make.exe
+Solução: Verificar a instalação e o caminho do MinGW
+Aqui estão os passos para corrigir:
 
+1. **Verifique o caminho do MinGW**
+Certifique-se de que o MinGW esteja instalado corretamente e que o caminho para o binário do MinGW esteja correto. O caminho padrão do MinGW é geralmente C:/MinGW/bin, e não C:/mingw64/bin.
+
+Verifique se o caminho do compilador gcc está correto. No terminal, rode:
+
+```bash
+where gcc
+```
+Isso deve mostrar o caminho para o gcc.
+
+Se o gcc estiver em outro diretório (por exemplo, C:/MinGW/bin/gcc.exe), você precisará configurar o CMake para apontar para o local correto.
+
+2. **Corrija o comando CMake com o caminho correto**
+Com base na localização do gcc e do make, ajuste o comando para garantir que o CMake use o caminho correto. Aqui está um exemplo, assumindo que o MinGW está instalado em C:/MinGW:
+
+```bash
+cmake -G "MinGW Makefiles" -DCMAKE_C_COMPILER=C:/MinGW/bin/gcc.exe -DCMAKE_CXX_COMPILER=C:/MinGW/bin/g++.exe -DCMAKE_MAKE_PROGRAM=C:/MinGW/bin/make.exe
+```
+Esse comando garante que o CMake esteja usando os compiladores e o programa de build correto.
+
+3. **Teste o CMake**
+Depois de corrigir o caminho, tente novamente:
+
+```bash
 make
+```
 
 
-g++ teste1.cpp -o teste1
-g++ teste2.cpp -o teste2
-g++ teste3.cpp -o teste3
-g++ teste4.cpp -o teste4
+Resumo:
+Verifique onde está instalado o gcc com o comando where gcc.
+Ajuste o comando CMake para usar os caminhos corretos do gcc e make:
+```bash
+cmake -G "MinGW Makefiles" -DCMAKE_C_COMPILER=C:/MinGW/bin/gcc.exe -DCMAKE_CXX_COMPILER=C:/MinGW/bin/g++.exe -DCMAKE_MAKE_PROGRAM=C:/MinGW/bin/make.exe
+```
+Compile o projeto com make.
 
 
+O problema está relacionado ao fato de o CMake não conseguir localizar o compilador GCC corretamente. Você mencionou que o caminho do GCC no seu sistema é C:\mingw64\bin\gcc.exe, mas no comando você estava especificando C:/MinGW/bin/gcc.exe, que não corresponde ao caminho correto.
 
-.\teste1.exe
-.\teste2.exe
-.\teste3.exe
-.\teste4.exe
+Vamos corrigir isso configurando o caminho correto para o GCC e o G++.
+
+Passos para corrigir:
+Corrigir o comando CMake: Use o caminho correto para os compiladores gcc e g++, que no seu caso são encontrados em C:\mingw64\bin.
+
+O comando atualizado será:
+
+```bash
+cmake -G "MinGW Makefiles" -DCMAKE_C_COMPILER=C:/mingw64/bin/gcc.exe -DCMAKE_CXX_COMPILER=C:/mingw64/bin/g++.exe -DCMAKE_MAKE_PROGRAM=C:/mingw64/bin/make.exe
+```
+
+Isso informará ao CMake onde encontrar o compilador correto e o make no caminho correto.
+
+Verificar a instalação do MinGW: Como o caminho é C:\mingw64\bin\gcc.exe, verifique se você instalou o MinGW-w64 corretamente e se ele está configurado no PATH.
+
+Execute o make novamente: Se o CMake for configurado corretamente, você pode compilar o projeto com:
+
+```bash
+make
+```

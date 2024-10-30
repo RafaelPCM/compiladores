@@ -107,17 +107,16 @@ void EmitLabel(int label) {
 
 // Definição de While::Gen() em gen.cpp
 void While::Gen() {
-    int label1 = NewLabel();
-    int label2 = NewLabel();
-    
-    cout << "Inicio do loop While\n";  // Depuração
-    EmitLabel(label1);
-    Expression* cond = Rvalue(condition);
-    
-    cout << "\tifFalse " << cond->ToString() << " goto L" << label2 << endl;
-    body->Gen();
-    cout << "\tgoto L" << label1 << endl;
-    EmitLabel(label2);
-    
-    cout << "Fim do loop While\n";  // Depuração
+    int label1 = NewLabel();  // Cria rótulo para o início do loop
+    int label2 = NewLabel();  // Cria rótulo para o final do loop
+
+    EmitLabel(label1);  // Emite o rótulo do início
+    Expression* cond = Rvalue(condition);  // Avalia a condição do while
+    cout << "\tifFalse " << cond->ToString() << " goto L" << label2 << endl;  // Se a condição for falsa, vai para o final do loop
+    body->Gen();  // Gera o código do corpo do while
+    cout << "\tgoto L" << label1 << endl;  // Volta ao início do loop
+    EmitLabel(label2);  // Emite o rótulo de saída do loop
 }
+
+
+
