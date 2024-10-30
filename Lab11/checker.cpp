@@ -173,9 +173,9 @@ void Traverse(Node *n)
         {
             While *w = (While *)n;
             cout << "<WHILE> ";
-            Traverse(w->expr);
+            Traverse(w->condition);  // Substituído 'expr' por 'condition'
             cout << "\n";
-            Traverse(w->stmt);
+            Traverse(w->body);  // Substituído 'stmt' por 'body'
             cout << "</WHILE> ";
             break;
         }

@@ -327,16 +327,13 @@ void If::Gen()
 
 While::While(Expression *e, Statement *s) : 
     Statement(NodeType::WHILE_STMT), 
-    expr(e), 
-    stmt(s) 
+    condition(e), 
+    body(s) 
 {
     
 }
 
-void While::Gen()
-{
-    
-}
+
 
 // --------
 // Do-While
@@ -351,10 +348,22 @@ DoWhile::DoWhile(Statement *s, Expression *e) :
     before = NewLabel();
 }
 
-void DoWhile::Gen()
-{
-    cout << 'L' << before << ':' << endl;
-    stmt->Gen();
-    Expression * n = Rvalue(expr);
-    cout << "\tifTrue " << n->ToString() << " goto L" << before << endl;
+void DoWhile::Gen() {
+    int label1 = NewLabel();  // Cria rótulo para o início do loop
+    int label2 = NewLabel();  // Cria rótulo para a saída do loop
+    
+    EmitLabel(label1);  // Emite o rótulo do início do loop
+    stmt->Gen();  // Gera o código para o corpo do loop
+    
+    Expression* cond = Rvalue(expr);  // Avalia a condição
+    cout << "\tifTrue " << cond->ToString() << " goto L" << label1 << endl;  // Se a condição for verdadeira, volta para o início do loop
+    
+    EmitLabel(label2);  // Emite o rótulo de saída do loop
 }
+
+
+
+// ---------
+// Função EmitLabel
+// ---------
+

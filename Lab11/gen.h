@@ -1,10 +1,11 @@
-
 #ifndef COMPILER_GENERATOR
 #define COMPILER_GENERATOR
 
 #include "ast.h"
 
-Expression * Lvalue(Expression * n);
-Expression * Rvalue(Expression * n);
+Expression* Lvalue(Expression* n);
+Expression* Rvalue(Expression* n);
+
+void EmitLabel(int label);
 
 #endif
