@@ -16,7 +16,13 @@ string   \"([^"\\]|\\.)*\"
 %%
 
 {string} {
-    cout << "String capturada: " << YYText() << "\n";  // Verificação básica para strings
+    std::string str = YYText();
+    str = str.substr(1, str.length() - 2);
+    size_t pos = 0;
+    while ((pos = str.find("\\", pos)) != std::string::npos) {
+        str.erase(pos, 1);
+    }
+    cout << "String capturada: " << str << "\n";
     return STRING;
 }
 {brancos}    ;

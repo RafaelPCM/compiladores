@@ -18,6 +18,7 @@ void Parser::Start()
             case ID: cout << "ID: " << scanner.YYText() << "\n"; break;
             case NUM: cout << "NUM: " << scanner.YYText() << "\n"; break;
             case RELOP: cout << "RELOP: " << scanner.YYText() << "\n";; break;
+            case STRING: cout << "STRING: " << scanner.YYText() << "\n"; break;
         }
     }
 }
