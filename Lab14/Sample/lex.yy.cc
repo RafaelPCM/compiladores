@@ -635,8 +635,18 @@ YY_RULE_SETUP
     str = str.substr(1, str.length() - 2);
     size_t pos = 0;
     while ((pos = str.find("\\", pos)) != std::string::npos) {
-        str.erase(pos, 1);
+        if (pos + 1 < str.length()) {
+            if (str[pos + 1] == '"' || str[pos + 1] == '\\') {
+                str.erase(pos, 1);
+                pos += 1;
+            } else {
+                str.erase(pos, 1);
+            }
+        } else {
+            str.erase(pos, 1);
+        }
     }
+
     cout << "String capturada: " << str << "\n";
     return STRING;
 }
@@ -644,80 +654,80 @@ YY_RULE_SETUP
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 28 "lexer.l"
+#line 39 "lexer.l"
 ;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 29 "lexer.l"
+#line 40 "lexer.l"
 return IF; 
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 30 "lexer.l"
+#line 41 "lexer.l"
 return THEN; 
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 31 "lexer.l"
+#line 42 "lexer.l"
 return ELSE; 
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 32 "lexer.l"
+#line 43 "lexer.l"
 return WHILE;
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 33 "lexer.l"
+#line 44 "lexer.l"
 return ID;  
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 34 "lexer.l"
+#line 45 "lexer.l"
 return NUM; 
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 35 "lexer.l"
+#line 46 "lexer.l"
 return RELOP;
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 36 "lexer.l"
+#line 47 "lexer.l"
 return RELOP;
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 37 "lexer.l"
+#line 48 "lexer.l"
 return RELOP;
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 38 "lexer.l"
+#line 49 "lexer.l"
 return RELOP;
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 39 "lexer.l"
+#line 50 "lexer.l"
 return RELOP;
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 40 "lexer.l"
+#line 51 "lexer.l"
 return RELOP;
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 41 "lexer.l"
+#line 52 "lexer.l"
 cout << YYText() << " é um token inválido!\n";
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 42 "lexer.l"
+#line 53 "lexer.l"
 ECHO;
 	YY_BREAK
-#line 720 "lex.yy.cc"
+#line 730 "lex.yy.cc"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1680,4 +1690,4 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 42 "lexer.l"
+#line 53 "lexer.l"

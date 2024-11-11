@@ -20,11 +20,22 @@ string   \"([^"\\]|\\.)*\"
     str = str.substr(1, str.length() - 2);
     size_t pos = 0;
     while ((pos = str.find("\\", pos)) != std::string::npos) {
-        str.erase(pos, 1);
+        if (pos + 1 < str.length()) {
+            if (str[pos + 1] == '"' || str[pos + 1] == '\\') {
+                str.erase(pos, 1);
+                pos += 1;
+            } else {
+                str.erase(pos, 1);
+            }
+        } else {
+            str.erase(pos, 1);
+        }
     }
+
     cout << "String capturada: " << str << "\n";
     return STRING;
 }
+
 {brancos}    ;
 if           return IF; 
 then         return THEN; 
