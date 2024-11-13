@@ -1,0 +1,3 @@
+C:/Users/rafae/vscodeworkbench/compiladores/Lab11/CMakeFiles/tradutor.dir
+C:/Users/rafae/vscodeworkbench/compiladores/Lab11/CMakeFiles/edit_cache.dir
+C:/Users/rafae/vscodeworkbench/compiladores/Lab11/CMakeFiles/rebuild_cache.dir
