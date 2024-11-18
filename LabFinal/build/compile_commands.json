@@ -1,0 +1,50 @@
+[
+{
+  "directory": "C:/Users/pedro/Desktop/Compilers/Laboratory 05/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/tradutor.dir/includes_CXX.rsp -O3 -DNDEBUG -std=c++1z -o CMakeFiles\\tradutor.dir\\ast.cpp.obj -c \"C:\\Users\\pedro\\Desktop\\Compilers\\Laboratory 05\\ast.cpp\"",
+  "file": "C:/Users/pedro/Desktop/Compilers/Laboratory 05/ast.cpp",
+  "output": "CMakeFiles/tradutor.dir/ast.cpp.obj"
+},
+{
+  "directory": "C:/Users/pedro/Desktop/Compilers/Laboratory 05/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/tradutor.dir/includes_CXX.rsp -O3 -DNDEBUG -std=c++1z -o CMakeFiles\\tradutor.dir\\gen.cpp.obj -c \"C:\\Users\\pedro\\Desktop\\Compilers\\Laboratory 05\\gen.cpp\"",
+  "file": "C:/Users/pedro/Desktop/Compilers/Laboratory 05/gen.cpp",
+  "output": "CMakeFiles/tradutor.dir/gen.cpp.obj"
+},
+{
+  "directory": "C:/Users/pedro/Desktop/Compilers/Laboratory 05/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/tradutor.dir/includes_CXX.rsp -O3 -DNDEBUG -std=c++1z -o CMakeFiles\\tradutor.dir\\checker.cpp.obj -c \"C:\\Users\\pedro\\Desktop\\Compilers\\Laboratory 05\\checker.cpp\"",
+  "file": "C:/Users/pedro/Desktop/Compilers/Laboratory 05/checker.cpp",
+  "output": "CMakeFiles/tradutor.dir/checker.cpp.obj"
+},
+{
+  "directory": "C:/Users/pedro/Desktop/Compilers/Laboratory 05/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/tradutor.dir/includes_CXX.rsp -O3 -DNDEBUG -std=c++1z -o CMakeFiles\\tradutor.dir\\parser.cpp.obj -c \"C:\\Users\\pedro\\Desktop\\Compilers\\Laboratory 05\\parser.cpp\"",
+  "file": "C:/Users/pedro/Desktop/Compilers/Laboratory 05/parser.cpp",
+  "output": "CMakeFiles/tradutor.dir/parser.cpp.obj"
+},
+{
+  "directory": "C:/Users/pedro/Desktop/Compilers/Laboratory 05/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/tradutor.dir/includes_CXX.rsp -O3 -DNDEBUG -std=c++1z -o CMakeFiles\\tradutor.dir\\symtable.cpp.obj -c \"C:\\Users\\pedro\\Desktop\\Compilers\\Laboratory 05\\symtable.cpp\"",
+  "file": "C:/Users/pedro/Desktop/Compilers/Laboratory 05/symtable.cpp",
+  "output": "CMakeFiles/tradutor.dir/symtable.cpp.obj"
+},
+{
+  "directory": "C:/Users/pedro/Desktop/Compilers/Laboratory 05/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/tradutor.dir/includes_CXX.rsp -O3 -DNDEBUG -std=c++1z -o CMakeFiles\\tradutor.dir\\error.cpp.obj -c \"C:\\Users\\pedro\\Desktop\\Compilers\\Laboratory 05\\error.cpp\"",
+  "file": "C:/Users/pedro/Desktop/Compilers/Laboratory 05/error.cpp",
+  "output": "CMakeFiles/tradutor.dir/error.cpp.obj"
+},
+{
+  "directory": "C:/Users/pedro/Desktop/Compilers/Laboratory 05/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/tradutor.dir/includes_CXX.rsp -O3 -DNDEBUG -std=c++1z -o CMakeFiles\\tradutor.dir\\tradutor.cpp.obj -c \"C:\\Users\\pedro\\Desktop\\Compilers\\Laboratory 05\\tradutor.cpp\"",
+  "file": "C:/Users/pedro/Desktop/Compilers/Laboratory 05/tradutor.cpp",
+  "output": "CMakeFiles/tradutor.dir/tradutor.cpp.obj"
+},
+{
+  "directory": "C:/Users/pedro/Desktop/Compilers/Laboratory 05/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/tradutor.dir/includes_CXX.rsp -O3 -DNDEBUG -std=c++1z -o CMakeFiles\\tradutor.dir\\lex.yy.cc.obj -c \"C:\\Users\\pedro\\Desktop\\Compilers\\Laboratory 05\\build\\lex.yy.cc\"",
+  "file": "C:/Users/pedro/Desktop/Compilers/Laboratory 05/build/lex.yy.cc",
+  "output": "CMakeFiles/tradutor.dir/lex.yy.cc.obj"
+}
+]

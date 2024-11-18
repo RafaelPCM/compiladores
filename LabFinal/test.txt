@@ -1,0 +1,11 @@
+minhaVariavel
+_minhaVariavel
+minha_Variavel
+"um "exemplo" com /\ caractere _ especial"
+
+if valor > 2.5E+30 then
+    ok
+else
+    problem
+while valor != 2.5 then
+    ok
