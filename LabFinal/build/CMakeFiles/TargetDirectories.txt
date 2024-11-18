@@ -1,3 +1,0 @@
-C:/Users/pedro/Desktop/Compilers/Laboratory 05/build/CMakeFiles/tradutor.dir
-C:/Users/pedro/Desktop/Compilers/Laboratory 05/build/CMakeFiles/edit_cache.dir
-C:/Users/pedro/Desktop/Compilers/Laboratory 05/build/CMakeFiles/rebuild_cache.dir
